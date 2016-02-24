@@ -5,7 +5,7 @@ class NotesTest < Minitest::Test
 
   def test_displays_all_notes_by_default
 
-expected = 'Add 1 to 2  1 + 2  # =>
+expected = 'Add 1 to 2    1 + 2  # => 3
 Subtract 5 from 2    2 - 5  # => -3
 Is 1 less than 2    1 < 2  # => true
 Is 1 equal to 2    1 == 2 # => 3
