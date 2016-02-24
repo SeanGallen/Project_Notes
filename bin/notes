@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require 'Open3'
 
 puts 'Add 1 to 2    1 + 2  # => 3
