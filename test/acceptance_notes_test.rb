@@ -27,3 +27,5 @@ assert_equal expected, stdout
   end
 end
 
+expected_parsed_by_line = expected.scan(/^.*.$/)
+
