@@ -1,9 +1,9 @@
 # Project_Notes
 
-We have been under the thumb of the note taking cabal for way too long.  This paper cutting supremacies is going down.  
+We have been under the thumb of the note taking cabal for way too long.  This paper cutting supremacies is going down.
 Our program will allow you to create searchable notes within your shell.  Once you have created something noteworthy, you
 can enter it into Notes for secure storage.  Later from anywhere in the shell you can refer and search those notes
-by just writing notes.  This..... is....a.......Game....... Changer!  
+by just writing notes.  This..... is....a.......Game....... Changer!
 
 
 
@@ -15,7 +15,7 @@ All rise the Notes!!
 
 The MIT License (MIT)
 
-Copyright (c) 2016 Greg Glover, Matthew Swann and Sean Gallen
+Copyright (c) 2016 Greg Glover, Matthew Swan and Sean Gallen
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
