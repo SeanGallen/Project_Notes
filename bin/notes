@@ -3,7 +3,6 @@ $LOAD_PATH.unshift File.realdirpath('../../lib', __FILE__)
 require 'notes'
 
 data = ['Add 1 to 2    1 + 2  # => 3',
-        'Add 1 to 2    1 + 2  # => 3',
         'Subtract 5 from 2    2 - 5  # => -3',
         'Is 1 less than 2    1 < 2  # => true',
         'Is 1 equal to 2    1 == 2 # => 3',
@@ -16,7 +15,16 @@ data = ['Add 1 to 2    1 + 2  # => 3',
         'Access an element in an array by its index    ["a","b","c"][0] # => "a"',
         'Find out how big the array is    ["a","b"].length # => 2']
 
-Notes.new.iterator(data, ARGV[0])
+if ARGV.length == 0
+  puts data
+else
+  i = 0
+  while i < ARGV.length
+      Notes.new.iterator(data, ARGV[i])
+      i += 1
+  end
+end
+
 
 
 
