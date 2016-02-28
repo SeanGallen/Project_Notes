@@ -1,20 +1,9 @@
-
 class Notes
-  def initialize(argument)
-    @argument = argument
-    @reader = []
-  #  @reader <<
-  end
-
-  def argument
-    @argument
-  end
-
-  def reader
-    @reader
-  end
-  def recall
-   @reader << 'Add 1 to 2   1 + 2 # => 3'
-   reader
+  def iterator(arr, arg)
+    arr.each do |x|
+      if x =~ /#{arg}/i
+        puts x
+      end
+    end
   end
 end
