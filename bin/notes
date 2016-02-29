@@ -18,7 +18,7 @@ notes = ['Add 1 to 2    1 + 2  # => 3',
 if ARGV.length == 0
   puts notes
 else
-  puts Notes.new.select_all(notes,ARGV)
+  puts Notes.new.select_all(notes, ARGV)
 end
 
 
