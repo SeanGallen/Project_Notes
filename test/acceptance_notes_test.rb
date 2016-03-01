@@ -10,16 +10,4 @@ class NotesTest < Minitest::Test
     expected = /^Convert 1 to a float *1.to_f # => 3/
     assert_match expected, stdout
   end
-
-  def test_table
-    notes_program = File.expand_path('../../bin/notes', __FILE__)
-    stdout, stderr, exitstatus = Open3.capture3(stdin_data: 'plus'), notes_program
-    #stdout, stderr, exitstatus = Open3.capture3 'ruby', notes_program('add')
-    assert_equal '', stderr
-    assert exitstatus.success?
-    expected = /^Convert 1 to a float *1.to_f # => 3/
-    assert_match expected, stdout
-  end
 end
-
-

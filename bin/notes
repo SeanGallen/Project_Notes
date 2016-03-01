@@ -20,7 +20,7 @@ help = "Uasge: notes [filter1] [filter2] [...]\nNotes that are accessible from t
 if ARGV.length == 0
   puts notes
 elsif ARGV.include?('-h')
-  puts help
+  puts Notes.new.select_help(help)
 elsif ARGV.include?('plus')
   ARGV.shift
   ARGV << 'add'
@@ -29,9 +29,7 @@ elsif ARGV.include?('plus')
   ARGV << '\\+'
   puts Notes.new.select_all(notes, ARGV)
 elsif ARGV.include?('integer')
-  ARGV.shift
-  ARGV << /[0-9]/
-  puts Notes.new.select_all(notes, ARGV)
+  puts Notes.new.select_integer(notes, ARGV)
 else
   puts Notes.new.select_all(notes, ARGV)
 end

@@ -17,4 +17,16 @@ class NotesTest < Minitest::Test
     assert_equal ["ac"],        Notes.new.select_all(notes, ['a', 'c'])
     assert_equal [],            Notes.new.select_all(notes, ['a', 'c', 'b'])
   end
+
+  def test_it_selects_help_string_when_ordered_to
+    notes = ['h', 'b']
+    assert_equal "h", Notes.new.select_help('h')
+    refute_equal "h", Notes.new.select_help('b')
+  end
+
+  def test_it_selects_only_integers_with_integer_keyword
+    notes = ['a', '12']
+    assert_equal ["12"], Notes.new.select_integer(notes, 'integer')
+    refute_equal ["a"], Notes.new.select_integer(notes, 'integer')
+  end
 end
