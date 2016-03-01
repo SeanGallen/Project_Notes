@@ -2,38 +2,40 @@
 $LOAD_PATH.unshift File.realdirpath('../../lib', __FILE__)
 require 'notes'
 
-notes = ['Add 1 to 2    1 + 2  # => 3',
-        'Subtract 5 from 2    2 - 5  # => -3',
-        'Is 1 less than 2    1 < 2  # => true',
-        'Is 1 equal to 2    1 == 2 # => 3',
-        'Is 1 greater than 2    1 > 2  # => 3',
-        'Is 1 less than or equal to 2    1 <= 2 # => 3',
-        'Is 1 greater than or equal to 2    1 >= 2 # => 3',
-        'Convert 1 to a float    1.to_f # => 3',
-        'Concatenate two arrays    [1,2] + [2, 3]   # => [1, 2, 2, 3]',
-        'Remove elements in second array from first    [1,2,4] - [2, 3] # => [1,4]',
-        'Access an element in an array by its index    ["a","b","c"][0] # => "a"',
-        'Find out how big the array is    ["a","b"].length # => 2']
+notes = [{'descrip' => 'Add 1 to 2',                                    'example' => '1 + 2  # => 3'},
+         {'descrip' => 'Subtract 5 from 2',                             'example' =>  '2 - 5  # => -3'},
+         {'descrip' => 'Is 1 less than 2',                              'example' => '1 < 2  # => true'},
+         {'descrip' => 'Is 1 equal to 2',                               'example' => '1 == 2 # => 3'},
+         {'descrip' => 'Is 1 greater than 2',                           'example' => '1 > 2  # => 3'},
+         {'descrip' => 'Is 1 less than or equal to 2',                  'example' => '1 <= 2 # => 3'},
+         {'descrip' => 'Is 1 greater than or equal to 2',               'example' => '1 >= 2 # => 3'},
+         {'descrip' => 'Convert 1 to a float',                          'example' => '1.to_f # => 3'},
+         {'descrip' => 'Concatenate two arrays',                        'example' => '[1,2] + [2, 3]   # => [1, 2, 2, 3]'},
+         {'descrip' => 'Remove elements in second array from first',    'example' => '[1,2,4] - [2, 3] # => [1,4]'},
+         {'descrip' => 'Access an element in an array by its index',    'example' => '["a","b","c"][0] # => "a"'},
+         {'descrip' => 'Find out how big the array is',                 'example' => '["a","b"].length # => 2'}]
 
 help = "Uasge: notes [filter1] [filter2] [...]\nNotes that are accessible from the command line."
 
 if ARGV.length == 0
-  puts notes
+  notes.each do |note|
+  puts note["descrip"].ljust(1) + note["example"].rjust(100 - note["descrip"].length)
+  end
 elsif ARGV.include?('-h')
   puts help
 elsif ARGV.include?('plus')
   ARGV.shift
   ARGV << 'add'
-  puts Notes.new.select_all(notes, ARGV)
+   Notes.new.select_all(notes, ARGV)
   ARGV.pop
   ARGV << '\\+'
-  puts Notes.new.select_all(notes, ARGV)
+   Notes.new.select_all(notes, ARGV)
 elsif ARGV.include?('integer')
   ARGV.shift
   ARGV << /[0-9]/
-  puts Notes.new.select_all(notes, ARGV)
+   Notes.new.select_all(notes, ARGV)
 else
-  puts Notes.new.select_all(notes, ARGV)
+   Notes.new.select_all(notes, ARGV)
 end
 
 
