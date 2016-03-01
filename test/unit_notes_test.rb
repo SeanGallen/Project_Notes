@@ -17,5 +17,4 @@ class NotesTest < Minitest::Test
     assert_equal ["ac"],        Notes.new.select_all(notes, ['a', 'c'])
     assert_equal [],            Notes.new.select_all(notes, ['a', 'c', 'b'])
   end
-
 end
